@@ -8,10 +8,10 @@ export interface PostProps {
 export interface UserProps {
   id: number;
   name: string;
-  username: string;   // ✅ semicolon
+  username: string;   
   email: string;
   address: {
-    street: string;   // ✅ semicolon
+    street: string;  
     suite: string;
     city: string;
     zipcode: string;
@@ -24,7 +24,7 @@ export interface UserProps {
   website: string;
   company: {
     name: string;
-    catchPhrase: string; // ✅ semicolon
+    catchPhrase: string; 
     bs: string;
   };
 }
