@@ -1,11 +1,7 @@
 import React from "react";
 import { UserProps } from "@/interfaces";
 
-interface Props {
-  user: UserProps;
-}
-
-const UserCard: React.FC<Props> = ({ user }) => {
+const UserCard: React.FC<UserProps> = (user) => {
   return (
     <div className="border rounded shadow p-6 bg-white hover:shadow-lg transition">
       <h2 className="text-xl font-bold text-blue-600">{user.name}</h2>
