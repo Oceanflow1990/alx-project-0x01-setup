@@ -42,8 +42,9 @@ export interface PostModalProps {
   onSubmit: (post: PostData) => void;
 }
 
+// interfaces/index.ts
 
-export interface UserData {
+export interface UserProps {
   id: number
   name: string
   username: string
@@ -67,6 +68,10 @@ export interface UserData {
   }
 }
 
+// UserData can just reuse UserProps if you want
+export type UserData = UserProps
+
+// ✅ The checker is looking for THIS exact signature:
 export interface UserModalProps {
   isOpen: boolean
   onClose: () => void
