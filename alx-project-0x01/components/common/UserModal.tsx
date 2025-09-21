@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { UserData, UserModalProps } from "@/interfaces"
 
-const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSave }) => {
+const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSubmit }) => {
   const [formData, setFormData] = useState<Omit<UserData, "id">>({
     name: "",
     username: "",
@@ -46,7 +46,7 @@ const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSave }) => {
       id: Date.now(), // simple unique id
       ...formData,
     }
-    onSave(newUser)
+    onSubmit(newUser)   // ✅ changed from onSave
     onClose()
   }
 
@@ -57,6 +57,7 @@ const UserModal: React.FC<UserModalProps> = ({ isOpen, onClose, onSave }) => {
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-xl font-bold mb-4">Add New User</h2>
         <form onSubmit={handleSubmit} className="space-y-3">
+          {/* form inputs same as before */}
           <input
             type="text"
             placeholder="Name"
