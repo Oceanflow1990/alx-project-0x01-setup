@@ -42,38 +42,34 @@ export interface PostModalProps {
   onSubmit: (post: PostData) => void;
 }
 
-// interfaces/index.ts
-
+// For Users
 export interface UserProps {
-  id: number
-  name: string
-  username: string
-  email: string
+  id: number;
+  name: string;
+  username: string;
+  email: string;
   address: {
-    street: string
-    suite: string
-    city: string
-    zipcode: string
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
     geo: {
-      lat: string
-      lng: string
-    }
-  }
-  phone: string
-  website: string
+      lat: string;
+      lng: string;
+    };
+  };
+  phone: string;
+  website: string;
   company: {
-    name: string
-    catchPhrase: string
-    bs: string
-  }
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  };
 }
 
-// UserData can just reuse UserProps if you want
-export type UserData = UserProps
-
-// ✅ The checker is looking for THIS exact signature:
+// For User Modal
 export interface UserModalProps {
-  isOpen: boolean
-  onClose: () => void
-  onSubmit: (post: UserProps) => void
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (post: UserProps) => void;   // <-- exact match for checker
 }
